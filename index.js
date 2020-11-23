@@ -209,12 +209,14 @@ Practice accessing data above by console.log-ing following items:
 (1) Name of the first artist (0th index) in the array
 (2) Bio of the third artist (2nd index) in the array */
 
-
+console.log(artists[0].name);
+console.log(artists[2].bio);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
 
-
+artists[8].name = "Vincent Van Gogh";
+console.log(artists[8].name);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Create a function called `getArtistByIndex` that takes two arguments:
@@ -225,19 +227,22 @@ Create a function called `getArtistByIndex` that takes two arguments:
  * For example, if getArtistByIndex is invoked with the artists dataset and the number 0,
  * it will return `The artist at index 0 is Amedeo Modigliani`.
 */
-function getArtistByIndex(/*Your Code Here*/) {
-  /*Your Code Here*/
-}
+function getArtistByIndex(artArray, id) {
+  return `The artist at index ${id} is ${artArray[id].name}`
+  };
+  console.log(getArtistByIndex(artists, 17));
+  
 
   
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born in and died in 20th century (1900-2000) example born in 1901 and died in 1959 - included / born in 1889 and died in 1925 not included - should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(/*Your Code Here*/){
-  /*Your Code Here*/
-}
-
+function get20s(artData){
+  if (artData.artist.years > 1899 && artData.artist.years < 2001);
+  return art20Array
+  }
+  console.log(get20s());
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -270,9 +275,11 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 
 At the end, this function should return the new array with information added"*/
 
-function addArtist(/*Your Code Here*/){
-  /*Your Code Here*/
-  }
+function addArtist(array,id,name,years,genre,nationality,bio){
+  array.push({id,name,years,genre,nationality,bio})
+  return array;
+}
+console.log(addArtist(artists,"21","Nic Leach","1980-Present","American","Nic Leach was born and raised in central Utah, attended Brigham Young University where he studied industrial design, architecture, animation, philosophy, design drafting and prototyping, fine art and art history. He graduated with a BFA in Animation in 2006 with a 3.7 GPA and was already applying to graduate schools. At this time, Nic was already working in his area of expertise which was in visual development in the lighting/shading department of Digital Domain, a leading visual effects studio in Venice, CA."))
 
   
 
@@ -285,9 +292,18 @@ and returns an array with names of artists who painted more than 100 paintings.
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/){
-  /*Your Code Here*/
+function lotsOfArt(artists){
+  for(artProfile in artists){
+    if(artProfile.paintings > 99){
+      artists100=[...artists100,artProfile.name];
+
+    }
+    console.log();
+  }
 }
+let artists100 = []
+
+console.log("artString");
 
 
 
